@@ -1,0 +1,12 @@
+Best performance --> 0.6352676153182983 for parameters:
+{'dropout': 0.1, 'activation': 'tanh', 'kernel_initializer': 'glorot_uniform', 'learning_rate': 0.001, 'batch_size': 256}
+Best performance --> 0.7657289505004883 for parameters:
+{'dropout': 0.1, 'activation': 'relu', 'kernel_initializer': 'glorot_uniform', 'learning_rate': 0.01, 'batch_size': 1024}
+Best performance --> 0.8028450012207031 for parameters:
+{'dropout': 0.3, 'activation': 'relu', 'kernel_initializer': 'glorot_uniform', 'learning_rate': 0.005, 'batch_size': 256}
+Best performance --> 0.8270182609558105 for parameters:
+{'dropout': 0.1, 'activation': 'relu', 'kernel_initializer': 'glorot_uniform', 'learning_rate': 0.001, 'batch_size': 1024}
+Best performance --> 0.8423879146575928 for parameters:
+{'dropout': 0.1, 'activation': 'relu', 'kernel_initializer': 'lecun_uniform', 'learning_rate': 0.001, 'batch_size': 256}
+Best performance --> 0.8425858020782471 for parameters:
+{'dropout': 0.2, 'activation': 'relu', 'kernel_initializer': 'lecun_uniform', 'learning_rate': 0.005, 'batch_size': 512}
