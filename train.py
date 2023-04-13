@@ -5,6 +5,6 @@ import tensorflow as tf
 
 if __name__ == '__main__':
     data = pd.read_csv("./data/covtype.csv")
-    # tf.random.set_seed(123)
+    tf.random.set_seed(123)
     train_and_eval(data)
-    # train_and_test_nn(data)
+    train_and_test_nn(data)

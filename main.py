@@ -95,6 +95,3 @@ def predict() -> int:
 if __name__ == '__main__':
     #Load models
     app.run()
-    
-
-

@@ -115,17 +115,16 @@ def evaluate_model(model: Union[LogisticRegression, DecisionTreeClassifier, str]
     if isinstance(model, str):
         elevation = X_test.iloc[:, 0].to_list()
         y_pred = [simple_heuristic(e) for e in elevation]
-        print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
-        return
     else:
         y_pred = model.predict(X_test)
     
+    classes = [i + 1 for i in range(7)]
     accuracy = accuracy_score(y_test, y_pred)
-    matrix = confusion_matrix(y_test, y_pred, labels=model.classes_)
+    matrix = confusion_matrix(y_test, y_pred, labels=classes)
     
     print(f"Accuracy: {accuracy:.4f}")
     disp = ConfusionMatrixDisplay(confusion_matrix=matrix,
-                                display_labels=model.classes_)
+                                display_labels=classes)
     fig, ax = plt.subplots(figsize=(10, 10))
     disp.plot(ax=ax)
     plt.title(f"{title} confusion matrix\nTest accuracy: {accuracy:.4f}")
@@ -154,7 +153,7 @@ def train_and_eval(data: pd.DataFrame) -> None:
     evaluate_model('heuristic', X_test, y_test, title='Heuristic', path='./models/evaluation/heuristic')
 
     #Train and evaluate logistic regression model
-    knn, scaler, _ = train_logistic_regression(X_train, y_train, X_test, y_test)
+    lr, scaler, _ = train_logistic_regression(X_train, y_train, X_test, y_test)
     print("\nLogistic Regression accuracy:")
-    evaluate_model(knn, scaler.transform(X_test), y_test, title='Logistic Regression', path='./models/evaluation/logistic_regression')
+    evaluate_model(lr, scaler.transform(X_test), y_test, title='Logistic Regression', path='./models/evaluation/logistic_regression')
     
