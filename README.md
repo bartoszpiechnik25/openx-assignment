@@ -42,7 +42,7 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
 - ### Heuristic
 
      The heuristic model is a simple model that predicts the most common class in the training set. The accuracy of the model is 9%.
-     ![Screenshot](./models/evaluation/heuristic.png)
+     ![Screenshot](models/evaluation/heuristic.png)
 
      As we can see performance of the heuristic model is very bad.
      We could get almost 50% accuracy by simply predicting the most common class in the training set, because the majority of the classes are of type 2.
@@ -51,18 +51,18 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
 - ### Tree
 
      The tree model is a decision tree classifier with a maximum depth of 3. The accuracy of the model is 68%.
-     ![Screenshot](./models/evaluation/decision_tree.png)
+     ![Screenshot](models/evaluation/decision_tree.png)
 
 - ### Logistic Regression
 
      The logistic regression model is a logistic regression classifier with a maximum number of iterations of 100. The accuracy of the model is 72%.
-     ![Screenshot](./models/evaluation/logistic_regression.png)
+     ![Screenshot](models/evaluation/logistic_regression.png)
 
     
 - ### Neural Network
     
     The neural network model is a neural network classifier with a maximum number of iterations of 100. The accuracy of the model is 93%.
-     ![Screenshot](./models/evaluation/nerual_net.png)
+     ![Screenshot](models/evaluation/nerual_net.png)
     
     The best set of hyperparameters for the neural network model is:
 
@@ -71,6 +71,6 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
     | 0.2     | relu       | lecun_uniform      | 0.005         | 512        |
 
     Learning curves for the neural network model with the best set of hyperparameters:
-    ![Screenshot](./models/evaluation/learning_curve.png)
+    ![Screenshot](models/evaluation/learning_curve.png)
 
     As we can see, the neural network learns relatively fast and the validation accuracy is starting to flatten out. Validation accuaracy is very close to the training accuracy, which means that the model is not overfitting. The model is not underfitting either, because the training accuracy is high, I suppose we could train this model for more epochs and get even better results.
