@@ -204,13 +204,22 @@ def plot_learning_curve(history: tf.keras.callbacks.History) -> None:
         model_name (str): The name of the model.
     """
     # Plot the learning curve
-    plt.figure(figsize=(11, 7), dpi=300)
-    plt.plot(history.history['accuracy'], label='accuracy')
-    plt.plot(history.history['val_accuracy'], label='val_accuracy')
-    plt.title("Learning curve")
-    plt.xlabel('Epoch')
-    plt.ylabel('Accuracy')
-    plt.ylim([0.5, 1])
-    plt.legend(loc='lower right')
-    plt.savefig(f'./models/evaluation/learning_curve.png', dpi=300, bbox_inches='tight')
-    plt.close()
+    fig_acc, ax_acc = plt.subplots(figsize=(11, 7), dpi=300)
+    ax_acc.plot(history.history['accuracy'], label='train_accuracy')
+    ax_acc.plot(history.history['val_accuracy'], label='val_accuracy')
+    ax_acc.set_title('Learnin Curve')
+    ax_acc.set_xlabel('Epochs')
+    ax_acc.set_ylabel('Accuracy')
+    ax_acc.set_ylim([0.5, 1])
+    ax_acc.legend(loc='lower right')
+    fig_acc.savefig('./models/evaluation/accuracy_curve.png', dpi=300, bbox_inches='tight')
+
+    # create the plot for loss
+    fig_loss, ax_loss = plt.subplots(figsize=(11, 7), dpi=300)
+    ax_loss.plot(history.history['loss'], label='loss')
+    ax_loss.plot(history.history['val_loss'], label='val_loss')
+    ax_loss.set_title('Loss Curve')
+    ax_loss.set_xlabel('Epochs')
+    ax_loss.set_ylabel('Loss')
+    ax_loss.legend(loc='lower right')
+    fig_loss.savefig('./models/evaluation/loss_curve.png', dpi=300, bbox_inches='tight')

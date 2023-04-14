@@ -61,7 +61,7 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
     
 - ### Neural Network
     
-    The neural network model is a neural network classifier with a maximum number of iterations of 100. The accuracy of the model is 93%.
+    The neural network model is a neural network classifier with a maximum number of iterations of 100. The accuracy of the model is 94%.
      ![Screenshot](models/evaluation/nerual_net.png)
     
     The best set of hyperparameters for the neural network model is:
@@ -71,6 +71,10 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
     | 0.2     | relu       | lecun_uniform      | 0.005         | 512        |
 
     Learning curves for the neural network model with the best set of hyperparameters:
-    ![Screenshot](models/evaluation/learning_curve.png)
+    ![Screenshot](models/evaluation/accuracy_curve.png)
+
+
+    ![Screenshot](models/evaluation/loss_curve.png)
+
 
     As we can see, the neural network learns relatively fast and the validation accuracy is starting to flatten out. Validation accuaracy is very close to the training accuracy, which means that the model is not overfitting. The model is not underfitting either, because the training accuracy is high, I suppose we could train this model for more epochs and get even better results.
