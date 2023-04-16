@@ -61,7 +61,7 @@ Where the model can be one of the following: `heuristic`, `tree`, `neural_networ
     
 - ### Neural Network
     
-    The neural network model is a neural network classifier with a maximum number of iterations of 100. The accuracy of the model is 94%.
+    The neural network model is a neural network classifier trained for 70 epochs. The accuracy of the model is 94%.
      ![Screenshot](models/evaluation/nerual_net.png)
     
     The best set of hyperparameters for the neural network model is:
